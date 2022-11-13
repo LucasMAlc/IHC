@@ -1,0 +1,145 @@
+<head>
+  <style>
+    .field{
+      height: 50px;
+    }
+    .fieldHidden{
+      height: 50px;
+      opacity: 0;
+    }
+    .width-control{
+      width: 90px;
+    }
+
+    .btn{
+      height: 50px;
+      border-radius: 0px;
+      border-width: 1px;
+      border-color: gray;
+      width: 90px;
+      background-color: lightgray;
+      margin-bottom: 3px;
+    }
+
+    .btn-clean{
+      background-color: lightcoral;
+    }
+
+    .result{
+      background-color: lightyellow;
+      cursor: default;
+      border-radius: 3px;
+      border-width: 1px;
+    }
+  </style>
+  <script>
+
+    function V1 () {
+      return parseInt(document.getElementById('n1').value || 0);
+    }
+
+    function V2 () {
+      return parseInt(document.getElementById('n2').value || 0);
+    }
+
+    function setR (value) {
+      document.getElementById('r').value = value;
+    }
+
+    function Sum () {
+      let n1 = V1();
+      let n2 = V2();
+
+      let result = n1+n2;
+      setR(result);
+    }
+
+    function Diff () {
+      let n1 = V1();
+      let n2 = V2();
+
+      let result = n1-n2;
+      setR(result);
+    }
+
+    function Divide () {
+      let n1 = V1();
+      let n2 = V2();
+
+      if(n2 == 0){
+        alert('Não é possivel dividir por 0');
+        return;
+      }
+
+      let result = n1/n2;
+      setR(result);
+    }
+    
+    function Multiply () {
+      let n1 = V1();
+      let n2 = V2();
+
+      let result = n1*n2;
+      setR(result);
+    }
+
+    function Quadratic () {
+      let n1 = V1();
+      let n2 = V2();
+
+      let result = n1*n1;
+      setR(result);
+    }
+
+    function Power () {
+      let n1 = V1();
+      let n2 = V2();
+
+      let result = Math.pow(n1, n2);
+      setR(result);
+    }
+
+    function SquareRoot () {
+      let n1 = V1();
+      let n2 = V2();
+
+      let result = Math.sqrt(n1);
+      setR(result);
+    }
+
+    function Clean () {
+      document.getElementById('n1').value = '';
+      document.getElementById('n2').value = '';
+      document.getElementById('r').value = '';
+    }
+
+  </script>
+</head>
+<body>
+  <div>
+    <div>
+      <span class="tag">1ºNum: </span>
+      <input class="field width-control" id="n1" type="number"/>
+      <button class="btn" onclick="Sum()">+</button>
+      <button class="btn" onclick="Diff()">-</button>
+    </div>
+    <div>
+      <span class="tag">2ºNum: </span>
+      <input class= "field width-control" id="n2" type="number"/>
+      <button class="btn" onclick="Multiply()">x</button>
+      <button class="btn" onclick="Divide()">/</button>
+    </div>
+    <div>
+      <span class="tag">Result : </span>
+      <input class= "field width-control result" id="r" type="number" readonly/>
+      <button class="btn" onclick="Quadratic()">Quadrado</button>
+      <button class="btn" onclick="Power()">Potência</button>
+    </div>
+    <div>
+      <span class="fieldHidden">1ºNum: </span>
+      <input class= "fieldHidden width-control result" id="r2" type="number" readonly/>
+      <button class="btn" onclick="SquareRoot()">Raiz</button>
+      <button class="btn btn-clean" onclick="Clean()">Limpar</button>
+    </div>
+  </div>
+</body>
