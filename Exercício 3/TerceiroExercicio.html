@@ -113,6 +113,26 @@
       document.getElementById('r').value = '';
     }
 
+    function Currency () {
+      document.getElementById('r').value = '';
+    }
+
+    function Reais () {
+      document.getElementById('r').value = '';
+    }
+
+    function Percentage () {
+      document.getElementById('r').value = '';
+    }
+
+    function Decimals () {
+      document.getElementById('r').value = '';
+    }
+
+    function NoDecimals () {
+      document.getElementById('r').value = '';
+    }
+
   </script>
 </head>
 <body>
@@ -138,7 +158,20 @@
     <div>
       <span class="fieldHidden">1ºNum: </span>
       <input class= "fieldHidden width-control result" id="r2" type="number" readonly/>
+      <button class="btn" onclick="Reais()">Reais</button>
       <button class="btn" onclick="SquareRoot()">Raiz</button>
+      
+    </div>
+    <div>
+      <span class="fieldHidden">1ºNum: </span>
+      <input class= "fieldHidden width-control result" id="r3" type="number" readonly/>
+      <button class="btn" onclick="Decimals()">+ Decimais</button>
+      <button class="btn" onclick="Currency()">Moedas</button>
+    </div>
+    <div>
+      <span class="fieldHidden">1ºNum: </span>
+      <input class= "fieldHidden width-control result" id="r4" type="number" readonly/>
+      <button class="btn" onclick="NoDecimals()">- Decimais</button>
       <button class="btn btn-clean" onclick="Clean()">Limpar</button>
     </div>
   </div>
