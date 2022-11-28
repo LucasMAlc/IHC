@@ -2,9 +2,11 @@
   <style>
     .field{
       height: 50px;
+      margin-left: 30px;
     }
     .fieldHidden{
       height: 50px;
+      margin-left: 0px;
       opacity: 0;
     }
     .width-control{
@@ -19,6 +21,7 @@
       width: 90px;
       background-color: lightgray;
       margin-bottom: 3px;
+      margin-left: 0px;
     }
 
     .btn-clean{
@@ -43,7 +46,9 @@
     }
 
     function setR (value) {
-      document.getElementById('r').value = value;
+      document.getElementById('r').value.toPercentage(value) = value;
+      
+
     }
 
     function Sum () {
@@ -114,23 +119,18 @@
     }
 
     function Currency () {
-      document.getElementById('r').value = '';
     }
 
     function Reais () {
-      document.getElementById('r').value = '';
     }
 
-    function Percentage () {
-      document.getElementById('r').value = '';
+    function toPercentage(){
     }
 
     function Decimals () {
-      document.getElementById('r').value = '';
     }
 
     function NoDecimals () {
-      document.getElementById('r').value = '';
     }
 
   </script>
@@ -150,28 +150,21 @@
       <button class="btn" onclick="Divide()">/</button>
     </div>
     <div>
-      <span class="tag">Result : </span>
+      <span class="tag">Result  : </span>
       <input class= "field width-control result" id="r" type="number" readonly/>
       <button class="btn" onclick="Quadratic()">Quadrado</button>
       <button class="btn" onclick="Power()">Potência</button>
     </div>
     <div>
-      <span class="fieldHidden">1ºNum: </span>
-      <input class= "fieldHidden width-control result" id="r2" type="number" readonly/>
-      <button class="btn" onclick="Reais()">Reais</button>
       <button class="btn" onclick="SquareRoot()">Raiz</button>
-      
+      <button class="btn" onclick="toCurrency()">0.00</button>
+      <button class="btn" onclick="toReais()">Reais</button>
+      <button class="btn" onclick="toPercentage()">0.00%</button>
     </div>
     <div>
-      <span class="fieldHidden">1ºNum: </span>
-      <input class= "fieldHidden width-control result" id="r3" type="number" readonly/>
-      <button class="btn" onclick="Decimals()">+ Decimais</button>
-      <button class="btn" onclick="Currency()">Moedas</button>
-    </div>
-    <div>
-      <span class="fieldHidden">1ºNum: </span>
-      <input class= "fieldHidden width-control result" id="r4" type="number" readonly/>
-      <button class="btn" onclick="NoDecimals()">- Decimais</button>
+      <input class= "field fieldHidden result" id="r" type="number" readonly/>
+      <button class="btn" onclick="Decimals()">>></button>
+      <button class="btn" onclick="NoDecimals()"><<</button>
       <button class="btn btn-clean" onclick="Clean()">Limpar</button>
     </div>
   </div>
